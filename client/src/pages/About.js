@@ -3,57 +3,44 @@ import moduleName from "../images/exercise.jpg";
 import image from "../images/meghan-holmes-wy_L8W0zcpI-unsplash.jpg";
 import image2 from "../images/bruce-mars-ZXq7xoo98b0-unsplash.jpg";
 import image3 from "../images/adult-cutting-daylight-facial-expression-1153369.jpg";
+import SVG2 from "../components/SVG2";
+import "./about.css";
 
 class About extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <header
+        <section
           style={{
-            height: 300,
+            height: 500,
             // clear: "both",
-            textAlign: "center"
+            textAlign: "center",
+            backgroundImage: `url(${moduleName})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            paddingTop: "60px",
+            backgroundPosition: "center center",
+            overflow: "hidden",
+            position: "relative"
           }}
-          // className="jumbotron"
-        >
-          <img
-            className="home-photo"
-            src={moduleName}
-            style={{ width: "100%", height: 700 }}
-          />
-        </header>
+        ></section>
         <div className="container">
           <div className="row">
-            <div className="col-sm-12">
-              {/* <header
-            className="heropanel--video"
-            data-vide-bg="mp4: https://www.solodev.com/assets/video-bg/blog-SD.mp4,  data-vide-options="
-          >
-            <div class="heropanel__content">
-              <h1>
-                <a rel="home">No Static Web Pages</a>
-              </h1>
-              <p>A Hero Video </p>
-            </div>
-          </header> */}
-
-              {/* <div id="hero">
-            <div class="videoContainer">
-              <iframe
-                class="videoContainer__video"
-                width="x"
-                height="y"
-                src="url/to/video/embed"
-                frameborder="0"
-              ></iframe>
-            </div>
-          </div> */}
-            </div>
+            <div className="col-sm-12"></div>
           </div>
-          <div className="row justify-content-center m-4">
-            <h3>WHAT RC FIT IS ABOUT</h3>
+          <div className="row justify-content-end m-4">
+            <h2>WHAT RC FIT IS ABOUT</h2>
           </div>
 
+          <section style={{ padding: "0px 0px 10px 0px" }}>
+            <div className="image-w-content">
+              <div className="icon">
+                <SVG2 />
+              </div>
+              <div className="images"></div>
+              <div className="cont-about"></div>
+            </div>
+          </section>
           <div className="row m-5 justify-content-end">
             <div className="card mb-3" style={{ maxwidth: "100%" }}>
               <div className="row no-gutters">

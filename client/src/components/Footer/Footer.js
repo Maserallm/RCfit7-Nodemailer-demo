@@ -22,11 +22,11 @@ class Footer extends React.Component {
             </div>
             <div className="col-sm-4">
               <Link>
-                <i class="fab fa-instagram-square"></i>Instagram
+                <i class="fab fa-instagram-square mx-2"></i>Instagram
               </Link>
               <br />
               <Link>
-                <i class="fab fa-facebook-square"></i>Facebook
+                <i class="fab fa-facebook-square mx-2"></i>Facebook
               </Link>
             </div>
           </div>
