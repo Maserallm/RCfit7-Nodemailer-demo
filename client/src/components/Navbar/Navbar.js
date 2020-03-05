@@ -7,7 +7,7 @@ class Navbar extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light index">
           <Link
             to="/"
             className={
@@ -36,11 +36,11 @@ class Navbar extends React.Component {
                 to="/about"
                 className={
                   window.location.pathname === "/about"
-                    ? "nav-link active"
-                    : "nav-link"
+                    ? "nav-link active border-right"
+                    : "nav-link border-right"
                 }
               >
-                <span className="float-right">
+                <span className="float-right text">
                   About <span className="sr-only">(current)</span>
                 </span>
               </Link>
@@ -49,11 +49,11 @@ class Navbar extends React.Component {
                 to="/schedule"
                 className={
                   window.location.pathname === "/schedule"
-                    ? "nav-link active"
-                    : "nav-link"
+                    ? "nav-link active border-right"
+                    : "nav-link border-right"
                 }
               >
-                <span className="float-right">
+                <span className="float-right text">
                   Schedule <span className="sr-only">(current)</span>
                 </span>
               </Link>
@@ -66,7 +66,7 @@ class Navbar extends React.Component {
                     : "nav-link"
                 }
               >
-                <span className="float-right">
+                <span className="float-right text">
                   Contact <span className="sr-only">(current)</span>
                 </span>
               </Link>
@@ -105,21 +105,6 @@ class Navbar extends React.Component {
             )}
           </div>
         </nav>
-        {/* <nav className="navbar fixed-bottom navbar-light bg-light">
-          <a className="navbar-brand text-center" href="#">
-            231B North Village Blvd. <br />
-            Celebration, FL 34747
-          </a>
-          <a className="navbar-brand text-center" href="#">
-            RCFIT7@rcfit7.com <br />
-            321-688-1279
-          </a>
-          <a className="navbar-brand text-center" href="#">
-            Instagram
-            <br />
-            Facebook
-          </a>
-        </nav> */}
       </React.Fragment>
     );
   }
