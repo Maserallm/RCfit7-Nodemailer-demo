@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SvgComponent from "./SVG";
+import SvgComponent from "../SVG";
+import "./index.css";
 
 class Navbar extends React.Component {
   render() {
@@ -89,12 +90,15 @@ class Navbar extends React.Component {
               ""
             )}
             {this.props.authorized ? (
-              <button className="btn-primary mx-1" onClick={this.props.logout}>
+              <button
+                className="btn-primary mx-1 login-logout"
+                onClick={this.props.logout}
+              >
                 Logout
               </button>
             ) : (
               <Link to="/login">
-                <span className="float-right">
+                <span className="float-right login-logout">
                   <button>Login / Sign-Up</button>
                 </span>
               </Link>

@@ -12,11 +12,11 @@ class SideBox extends React.Component {
           </span>
           <br />
           <span>
-            <Link to="/membership-options">MEMBERSHIP OPTIONS</Link>
+            <Link to="/schedule">SCHEDULE</Link>
           </span>
           <br />
           <span>
-            <Link to="/schedule">SCHEDULE</Link>
+            <Link to="/contact">MEMBERSHIP OPTIONS</Link>
           </span>
         </div>
       </div>
