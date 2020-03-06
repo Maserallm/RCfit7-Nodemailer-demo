@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+import API from "../utils/contactAPI";
 import { Link } from "react-router-dom";
 import "./contact.css";
 
@@ -9,26 +9,33 @@ class Contact extends React.Component {
     message: "",
     email: "",
     buttonText: "Send Message",
-    sent: false
+    sent: false,
+    result: "",
+    error: ""
   };
 
   formSubmit = e => {
     e.preventDefault();
-
     this.setState({
       buttonText: "...sending"
     });
 
-    let data = {
+    let mailer = {
       name: this.state.name,
       email: this.state.email,
       message: this.state.message
     };
 
-    axios
-      .post("API_URI", data)
+    API.send({ mailer })
       .then(res => {
-        this.setState({ sent: true }, this.resetForm());
+        if (res.data.message) {
+          this.setState(
+            { sent: true, result: res.data.message },
+            this.resetForm()
+          );
+        } else {
+          this.setState({ error: "Message did not send." });
+        }
       })
       .catch(() => {
         console.log("Message not sent");
@@ -54,6 +61,8 @@ class Contact extends React.Component {
             <form
               className="contact-form cust-form"
               onSubmit={e => this.formSubmit(e)}
+              method="POST"
+              action="send"
             >
               <div>
                 <label className="message-name" htmlFor="message-name">
@@ -103,6 +112,7 @@ class Contact extends React.Component {
                 <button type="submit" className="button button-primary ibSQGl">
                   {this.state.buttonText}
                 </button>
+                {this.state.result ? <small>{this.state.result}</small> : ""}
               </div>
             </form>
           </div>

@@ -48,41 +48,6 @@ mongoose.connect(
 // ROUTES
 app.use(routes);
 
-//Nodemailer
-app.get("/", (req, res) => {
-  res.send("hello");
-});
-app.post("/api/v1", (req, res) => {
-  var data = req.body;
-
-  var smtpTransport = nodemailer.createTransport({
-    service: "Gmail",
-    port: 465,
-    auth: {
-      user: "wooffte@gmail.com",
-      pass: "4072019975"
-    }
-  });
-
-  var mailOptions = {
-    from: data.email,
-    to: "kingffte@gmail.com",
-    subject: "ENTER_YOUR_SUBJECT",
-    html: `<p>${data.name}</p>
-          <p>${data.email}</p>
-          <p>${data.message}</p>`
-  };
-
-  smtpTransport.sendMail(mailOptions, (error, response) => {
-    if (error) {
-      res.send(error);
-    } else {
-      res.send("Success");
-    }
-    smtpTransport.close();
-  });
-});
-
 // Start the API server
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
