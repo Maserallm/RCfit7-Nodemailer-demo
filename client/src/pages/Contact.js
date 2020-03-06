@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import "./contact.css";
 
 class Contact extends React.Component {
   state = {
@@ -45,53 +47,83 @@ class Contact extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Contact Page</h1>
+        <div className="container">
+          <h1>CONTACT US</h1>
 
-        <form className="contact-form" onSubmit={e => this.formSubmit(e)}>
-          <label className="message" htmlFor="message-input">
-            Your Message
-          </label>
-          <textarea
-            onChange={e => this.setState({ message: e.target.value })}
-            name="message"
-            className="message-input"
-            type="text"
-            placeholder="Please write your message here"
-            value={this.state.message}
-            required
-          />
+          <div className="col-sm-6">
+            <form
+              className="contact-form cust-form"
+              onSubmit={e => this.formSubmit(e)}
+            >
+              <div>
+                <label className="message-name" htmlFor="message-name">
+                  Your Name
+                </label>
+                <input
+                  onChange={e => this.setState({ name: e.target.value })}
+                  name="name"
+                  className="message-name cpYcEZ border-bottom"
+                  type="text"
+                  placeholder="Your Name"
+                  value={this.state.name}
+                />
+              </div>
 
-          <label className="message-name" htmlFor="message-name">
-            Your Name
-          </label>
-          <input
-            onChange={e => this.setState({ name: e.target.value })}
-            name="name"
-            className="message-name"
-            type="text"
-            placeholder="Your Name"
-            value={this.state.name}
-          />
+              <div>
+                <label className="message-email" htmlFor="message-email">
+                  Your Email
+                </label>
+                <input
+                  onChange={e => this.setState({ email: e.target.value })}
+                  name="email"
+                  className="message-email cpYcEZ border-bottom"
+                  type="email"
+                  placeholder="your@email.com"
+                  required
+                  value={this.state.email}
+                />
+              </div>
 
-          <label className="message-email" htmlFor="message-email">
-            Your Email
-          </label>
-          <input
-            onChange={e => this.setState({ email: e.target.value })}
-            name="email"
-            className="message-email"
-            type="email"
-            placeholder="your@email.com"
-            required
-            value={this.state.email}
-          />
+              <div>
+                <label className="message" htmlFor="message-input">
+                  Your Message
+                </label>
+                <textarea
+                  onChange={e => this.setState({ message: e.target.value })}
+                  name="message"
+                  className="message-input eJFNDT border-bottom"
+                  type="text"
+                  placeholder="Please write your message here"
+                  value={this.state.message}
+                  required
+                />
+              </div>
 
-          <div className="button--container">
-            <button type="submit" className="button button-primary">
-              {this.state.buttonText}
-            </button>
+              <div className="button-container">
+                <button type="submit" className="button button-primary ibSQGl">
+                  {this.state.buttonText}
+                </button>
+              </div>
+            </form>
           </div>
-        </form>
+
+          <div className="col-sm-6 my-4">
+            <h4>Reach Out to Us!</h4>
+            <p>
+              We'd love to hear about your progress, help with any questions, or
+              just hang out and get to know you! And don't forget to follow us
+              on social media for the latest fitness tip and events
+            </p>
+            <ul>
+              <Link to="https://www.instagram.com/rcfit7/?hl=en">
+                <i className="fab fa-instagram-square mx-2"></i>Instagram <br />
+              </Link>
+              <Link to="https://www.facebook.com/RCFit7/">
+                <i className="fab fa-facebook-square mx-2"></i>Facebook
+              </Link>
+            </ul>
+          </div>
+        </div>
       </React.Fragment>
     );
   }

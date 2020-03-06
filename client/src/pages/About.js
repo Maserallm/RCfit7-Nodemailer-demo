@@ -37,10 +37,13 @@ class About extends React.Component {
               <div className="icon">
                 <SVG2 />
               </div>
-              <div className="images"></div>
+              <div className="images">
+                <div className="img-wrapper"></div>
+              </div>
               <div className="cont-about"></div>
             </div>
           </section>
+
           <div className="row m-5 justify-content-end">
             <div className="card mb-3" style={{ maxwidth: "100%" }}>
               <div className="row no-gutters">

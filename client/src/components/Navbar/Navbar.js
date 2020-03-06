@@ -33,6 +33,19 @@ class Navbar extends React.Component {
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
               <Link
+                to="/"
+                className={
+                  window.location.pathname === "/"
+                    ? "nav-link active border-right"
+                    : "nav-link border-right"
+                }
+              >
+                <span className="float-right text">
+                  Home <span className="sr-only">(current)</span>
+                </span>
+              </Link>
+
+              <Link
                 to="/about"
                 className={
                   window.location.pathname === "/about"
@@ -62,7 +75,7 @@ class Navbar extends React.Component {
                 to="/contact"
                 className={
                   window.location.pathname === "/contact"
-                    ? "nav-link active"
+                    ? "nav-link active "
                     : "nav-link"
                 }
               >
